@@ -168,11 +168,107 @@ $userGet->salary = 222;
  unset($userUnset->salary);
  echo "<hr>";
  echo 'AFTER : ' . var_dump( $userUnset);
-  */
+
 
   class UserSleep
   {
       public $nam = 'dfas';
       private $age = 14;
       protected $salary = 42005283.36;
+    
+      public function __sleep()
+      {
+          //cleanup before serialisation
+          return ['name' , 'salary'];
+      }
+
   }
+
+  $UserSleep = new UserSleep();
+  var_dump(serialize($UserSleep));
+    
+
+    class userWakeup
+    {
+        protected $ftpCliant;
+        protected $ftpHost;
+        protected $ftpUser;
+        protected $ftpPass;
+
+        public function __construct($host  , $username , $password)
+        {
+            $this->ftpHost = $host;
+            $this->ftpUser = $username;
+            $this->ftpPass = $password;
+
+            echo 'test !!!' . PHP_EOL;
+            $this->connect();
+        }
+
+        public function connect()
+        {
+            $this->ftpCliant = ftp_connect($this->ftpHost , 21 ,5);
+            ftp_login($this->ftpCliant , $this->ftpUser , $this->ftpPass );
+            
+        }
+
+        public function __sleep()
+        {
+            return ['ftpHost' , 'ftpUser' , 'ftpPass'];
+        }
+
+        public function __wakeup()
+        {
+            $this->connect();
+        }
+    }
+
+$userWakeup = new userWakeup('test.rebex.net' , 'demo' , 'password');
+$serialized = serialize($userWakeup);
+$unserialized = unserialize($serialized);
+
+var_dump($userWakeup);
+var_dump($serialized);
+var_dump($unserialized);
+*/
+class userToSring
+{
+    protected $name;
+    protected $age;
+
+    public function __construct($name , $age)
+    {
+        $this->name = $name;
+        $this->age = $age;
+    }
+
+    public function __toString()
+    {
+        return $this->name . ', age ' . $this->age;
+    }
+}
+
+$userToSring = new userToSring('John' , 24);
+echo $userToSring;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

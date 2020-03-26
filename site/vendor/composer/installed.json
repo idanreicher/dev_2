@@ -21,6 +21,9 @@
         "provide": {
             "psr/log-implementation": "1.0.0"
         },
+	"require": {
+            "guzzlehttp/guzzle": "~6.0"
+        },
         "require-dev": {
             "aws/aws-sdk-php": "^2.4.9 || ^3.0",
             "doctrine/couchdb": "~1.0@dev",
