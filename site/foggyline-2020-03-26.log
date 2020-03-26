@@ -1,0 +1,5 @@
+[2020-03-26T10:20:42.672211+01:00] foggyline.INFO: Info bug {"user":"idan","constant":505.5} []
+[2020-03-26T10:23:13.877206+01:00] foggyline.DEBUG: Debug bug {"user":"idan","constant":505.5} []
+[2020-03-26T10:23:13.882697+01:00] foggyline.INFO: Info bug {"user":"idan","constant":505.5} []
+[2020-03-26T10:24:02.185824+01:00] foggyline.DEBUG: Debug bug {"user":"idan","constant":505.5} []
+[2020-03-26T10:24:02.196390+01:00] foggyline.INFO: Info bug {"user":"idan","constant":505.5} []
