@@ -231,6 +231,7 @@ var_dump($userWakeup);
 var_dump($serialized);
 var_dump($unserialized);
 */
+/** 
 class userToSring
 {
     protected $name;
@@ -250,9 +251,23 @@ class userToSring
 
 $userToSring = new userToSring('John' , 24);
 echo $userToSring;
+*/
 
+/**
+ * __invoke
+ */
 
+ class UserInvoke
+ {
+     public function __invoke($name , $age)
+     {
+         echo $name . ", " . $age;
+     }
+ }
 
+$userInvoke = new UserInvoke();
+$userInvoke('john' , 65);
+call_user_func($userInvoke , 'john' , 64);
 
 
 
