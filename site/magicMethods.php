@@ -255,7 +255,7 @@ echo $userToSring;
 
 /**
  * __invoke
- */
+ 
 
  class UserInvoke
  {
@@ -268,7 +268,11 @@ echo $userToSring;
 $userInvoke = new UserInvoke();
 $userInvoke('john' , 65);
 call_user_func($userInvoke , 'john' , 64);
+*/
 
+/**
+ * __set_state()
+ */
 
 
 
